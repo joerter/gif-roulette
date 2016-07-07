@@ -7,7 +7,7 @@ dependencies:
     - docker build -t joerter/gifroulette:latest .
 test:
   override:
-    - docker run --rm joerter/gifroulette dotnet
+    - echo "No tests yet"
 deployment:
   hub:
     branch: master
