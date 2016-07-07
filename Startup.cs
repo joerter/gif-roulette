@@ -1,16 +1,30 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace GifRoulette
 {
     public class Startup
     {
-        public void Configure(IApplicationBuilder app)
+        public void ConfigureServices(IServiceCollection services)
         {
-            app.Run(context =>
+            services.AddMvc();
+        }
+
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
+        {
+            loggerFactory.AddConsole(LogLevel.Debug);
+            loggerFactory.AddDebug();
+
+            
+
+            app.UseMvc(routes =>
             {
-                return context.Response.WriteAsync("Hello from ASP.NET Core!");
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
