@@ -26,6 +26,7 @@ namespace GifRoulette.Controllers
                 var gifyResponse = JsonConvert.DeserializeObject<GifyResponseModel>(content);
                 ViewData["Query"] = url;
                 ViewData["ImageUrl"] = gifyResponse.Data.Image_Url;
+                ViewData["MyTestData"] = "Hi";
 
                 return View();
             }
