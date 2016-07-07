@@ -1,0 +1,9 @@
+version: '2'
+services:
+  gifroulette:
+    image: joerter/gifroulette:latest
+    ports:
+      - "80:80"
+    environment:
+      PORT: 80
+      ASPNETCORE_ENVIRONMENT: production

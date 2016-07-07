@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using System;
 using System.IO;
 
 namespace GifRoulette
@@ -7,9 +8,10 @@ namespace GifRoulette
     {
         public static void Main(string[] args)
         {
+            var port = Environment.GetEnvironmentVariable("PORT");
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .UseUrls("http://*:5000")
+                .UseUrls("http://*:" + port)
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseStartup<Startup>()
                 .Build();
