@@ -5,6 +5,9 @@ dependencies:
   override:
     - docker info
     - docker build -t joerter/gifroulette:latest .
+test:
+  override:
+    - docker run --rm joerter/gifroulette dotnet
 deployment:
   hub:
     branch: master
