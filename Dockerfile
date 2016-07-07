@@ -6,6 +6,4 @@ WORKDIR /app
 
 RUN ["dotnet", "restore"]
 
-EXPOSE 5000
-
 CMD ["/bin/bash", "-c", "dotnet watch run"]

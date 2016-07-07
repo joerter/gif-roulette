@@ -1,0 +1,10 @@
+FROM microsoft/dotnet:1.0.0-preview2-sdk
+MAINTAINER John Oerter
+
+COPY . /app
+WORKDIR /app
+
+RUN dotnet restore
+RUN dotnet publish -c Release
+
+CMD dotnet /app/bin/Release/netcoreapp1.0/publish/app.dll
