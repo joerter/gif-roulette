@@ -1,4 +1,4 @@
-# Gettign Started
+# Getting Started
 1. Make sure you have Docker installed and running on your machine.  
 [Windows](https://docs.docker.com/engine/installation/windows/#/docker-for-windows)  
 [OS X](https://docs.docker.com/docker-for-mac/)
